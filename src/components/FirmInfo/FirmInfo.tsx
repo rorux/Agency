@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { TFirmInfoProps } from "./types";
 import { formatDate, renderType } from "./constants";
+import ModalEditFirm from "../ModalEditFirm";
+import "./info.scss";
 
 const FirmInfo: React.FC<TFirmInfoProps> = ({
   name,
@@ -10,6 +12,7 @@ const FirmInfo: React.FC<TFirmInfoProps> = ({
 }) => {
   const [convertedDate, setConvertedDate] = React.useState("");
   const [renderedType, setRenderedType] = React.useState("");
+  const [modalEditFirmActive, setModalEditFirmActive] = React.useState(true);
 
   useEffect(() => {
     if (contract?.issue_date) {
@@ -26,6 +29,10 @@ const FirmInfo: React.FC<TFirmInfoProps> = ({
 
   return (
     <section className="info">
+      <ModalEditFirm
+        active={modalEditFirmActive}
+        setActive={setModalEditFirmActive}
+      />
       <div className="row row-subtitle">
         <span className="subtitle">Общая информация</span>
         &nbsp;&nbsp;&nbsp;

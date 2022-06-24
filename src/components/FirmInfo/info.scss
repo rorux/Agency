@@ -1,0 +1,32 @@
+.info {
+  padding: 28px 0;
+  border-bottom: 1px solid #e5e5e5;
+
+  &__param {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    color: #3b3b3b;
+    width: 150px;
+  }
+
+  &__text {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #3b3b3b;
+  }
+
+  &__link {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #82b284;
+  }
+}

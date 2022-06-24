@@ -1,4 +1,5 @@
 import React from "react";
+import "./toolbar.scss";
 
 const Toolbar = () => {
   return (

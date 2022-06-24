@@ -1,0 +1,38 @@
+.photo {
+  margin-right: 27px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+  position: relative;
+
+  &__picture {
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #3b3b3b;
+    margin-bottom: 5px;
+  }
+
+  &__date {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #808080;
+  }
+
+  &__delete {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./side.scss";
 
 const Side = () => {
   return (

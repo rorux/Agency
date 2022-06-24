@@ -1,0 +1,58 @@
+.side {
+  width: 224px;
+  background: #f7f7f7;
+  box-shadow: inset -15px 0 21px -15px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
+}
+
+.person {
+  padding: 20px;
+
+  &__name {
+    text-align: center;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0.03em;
+    color: #3b3b3b;
+    text-transform: uppercase;
+  }
+
+  &__post {
+    text-align: center;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0.2px;
+    color: #3b3b3b;
+    text-transform: uppercase;
+  }
+}
+
+.list__item {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #82b284;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #eeeeee;
+  padding: 12px 16px;
+  box-sizing: border-box;
+
+  &:hover {
+    background: #e8e8e8;
+  }
+
+  svg {
+    margin-right: 12px;
+  }
+}

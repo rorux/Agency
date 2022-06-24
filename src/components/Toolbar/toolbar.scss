@@ -1,0 +1,52 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 40px;
+  border-bottom: 1px solid #e5e5e5;
+
+  &__backward {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #82b284;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      color: #98c88c;
+
+      svg {
+        fill: #98c88c;
+      }
+    }
+
+    &:active {
+      color: #58a742;
+
+      svg {
+        fill: #58a742;
+      }
+    }
+
+    svg {
+      margin-right: 12px;
+      fill: #82b284;
+    }
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  &__btn {
+    display: block;
+    margin-right: 25px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

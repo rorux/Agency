@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { TFirmPhotoProps } from "./types";
 import { wordFormatDate } from "../FirmInfo/constants";
+import "./photo.scss";
 
 const FirmPhoto: React.FC<TFirmPhotoProps> = ({ photos, updatedAt }) => {
   const [convertedUpdatedAt, setConvertedUpdatedAt] = React.useState("");
