@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { TFirmInfoProps } from "./types";
 import { formatDate, renderType } from "./constants";
-import ModalEditFirm from "../ModalEditFirm";
+import Modal from "../Modal";
 import "./info.scss";
 
 const FirmInfo: React.FC<TFirmInfoProps> = ({
@@ -12,7 +12,7 @@ const FirmInfo: React.FC<TFirmInfoProps> = ({
 }) => {
   const [convertedDate, setConvertedDate] = React.useState("");
   const [renderedType, setRenderedType] = React.useState("");
-  const [modalEditFirmActive, setModalEditFirmActive] = React.useState(true);
+  const [modal, setModal] = React.useState(false);
 
   useEffect(() => {
     if (contract?.issue_date) {
@@ -29,14 +29,13 @@ const FirmInfo: React.FC<TFirmInfoProps> = ({
 
   return (
     <section className="info">
-      <ModalEditFirm
-        active={modalEditFirmActive}
-        setActive={setModalEditFirmActive}
-      />
+      <Modal active={modal} setActive={setModal}>
+        <p>456</p>
+      </Modal>
       <div className="row row-subtitle">
         <span className="subtitle">Общая информация</span>
         &nbsp;&nbsp;&nbsp;
-        <span className="btn green-btn">
+        <span className="btn green-btn" onClick={() => setModal(true)}>
           <svg
             width="18"
             height="17"

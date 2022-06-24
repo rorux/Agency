@@ -188,8 +188,8 @@ body {
 
 .row-paragraph {
   margin-bottom: 12px;
-}
 
-.row-paragraph:last-child {
-  margin-bottom: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

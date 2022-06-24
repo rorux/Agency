@@ -1,6 +1,7 @@
 import React from "react";
 
-export type TModalEditFirmProps = {
+export type TModalProps = {
   active: boolean;
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
+  children: any;
 };
