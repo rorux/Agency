@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { TFirmInfoProps } from "./types";
 import { formatDate, renderType } from "./constants";
 import Modal from "../Modal";
+import EditFirmInfo from "../EditFirmInfo";
 import "./info.scss";
 
 const FirmInfo: React.FC<TFirmInfoProps> = ({
@@ -30,7 +31,7 @@ const FirmInfo: React.FC<TFirmInfoProps> = ({
   return (
     <section className="info">
       <Modal active={modal} setActive={setModal}>
-        <p>456</p>
+        <EditFirmInfo setActive={setModal} />
       </Modal>
       <div className="row row-subtitle">
         <span className="subtitle">Общая информация</span>

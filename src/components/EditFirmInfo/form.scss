@@ -1,0 +1,71 @@
+.form {
+  &__title {
+    display: block;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+  &__group {
+    margin: 0 0 25px 0;
+    position: relative;
+    text-align: center;
+  }
+
+  &__input {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: #3b3b3b;
+    width: 400px;
+    padding: 11px 12px;
+    border: 1px solid #cdcdcd;
+    border-radius: 1px;
+    background-color: transparent;
+    outline: none;
+    transition: 0.3s;
+
+    &:hover {
+      border: 1px solid #808080;
+    }
+    &:focus {
+      border: 1px solid #3b3b3b;
+
+      ~ .form__label {
+        top: -5px;
+        font-size: 10px;
+        color: #808080;
+        background-color: #fff;
+        z-index: 1;
+        padding: 0 4px;
+      }
+    }
+    &:not(:placeholder-shown) ~ .form__label {
+      top: -5px;
+      font-size: 10px;
+      color: #808080;
+      background-color: #fff;
+      z-index: 1;
+      padding: 0 4px;
+    }
+  }
+
+  &__label {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #3b3b3b;
+    position: absolute;
+    top: 12px;
+    left: 35px;
+    z-index: -1;
+    transition: 0.3s;
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

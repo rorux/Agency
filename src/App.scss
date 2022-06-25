@@ -77,11 +77,9 @@ body {
   &:hover svg {
     fill: #98c88c;
   }
-
   &:active svg {
     fill: #58a742;
   }
-
   svg {
     fill: #82b284;
   }
@@ -91,11 +89,9 @@ body {
   &:hover svg {
     fill: #eb8282;
   }
-
   &:active svg {
     fill: #d61515;
   }
-
   svg {
     fill: #d95151;
   }
@@ -113,9 +109,9 @@ body {
   outline: 0px;
   background-color: transparent;
   min-width: 400px;
-  padding: 7px 10px;
+  padding: 9px 10px;
   box-sizing: border-box;
-  border-radius: 2px;
+  border-radius: 1px;
   border: 1px solid #e5e5e5;
   justify-content: center;
   position: relative;
@@ -124,11 +120,9 @@ body {
   &:hover {
     border: 1px solid #cdcdcd;
   }
-
   &:active {
     border: 1px solid #cdcdcd;
   }
-
   svg {
     position: absolute;
     left: 10px;
@@ -140,7 +134,6 @@ body {
 
   &:hover {
     color: #98c88c;
-
     svg {
       fill: #98c88c;
     }
@@ -148,7 +141,6 @@ body {
 
   &:active {
     color: #58a742;
-
     svg {
       fill: #58a742;
     }
@@ -156,6 +148,28 @@ body {
 
   svg {
     fill: #82b284;
+  }
+}
+
+.grey-button {
+  color: #b9b9b9;
+
+  &:hover {
+    color: #cacaca;
+    svg {
+      fill: #cacaca;
+    }
+  }
+
+  &:active {
+    color: #9c9c9c;
+    svg {
+      fill: #9c9c9c;
+    }
+  }
+
+  svg {
+    fill: #b9b9b9;
   }
 }
 

@@ -19,9 +19,11 @@
   }
 
   &__content {
-    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 1px;
+    padding: 30px 30px 35px;
     background-color: #fff;
-    height: 300px;
+    box-shadow: 0 2px 6px #ccc;
     width: 500px;
     z-index: 20;
     transform: scale(0.5);

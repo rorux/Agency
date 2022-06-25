@@ -19,6 +19,17 @@ export type TCompany = {
   updatedAt: string;
 };
 
+export type TCompanyEdit = {
+  name?: string;
+  shortName?: string;
+  businessEntity?: string;
+  contract?: {
+    no?: string;
+    issue_date?: string | undefined;
+  };
+  type?: Array<string> | undefined;
+};
+
 export interface ICompaniesState {
   company: TCompany | null;
   loading: boolean;
@@ -27,6 +38,7 @@ export interface ICompaniesState {
 
 export enum companiesActionTypes {
   COMPANY_INIT = "COMPANY::INIT",
+  COMPANY_EDIT = "COMPANY::EDIT",
   COMPANY_ERROR = "COMPANY::ERROR",
   COMPANY_SUCCESS = "COMPANY::SUCCESS",
   COMPANY_DELETE = "COMPANY::DELETE",
@@ -41,6 +53,11 @@ interface ICompaniesSuccessAction {
   payload: TCompany;
 }
 
+interface ICompaniesEditAction {
+  type: companiesActionTypes.COMPANY_EDIT;
+  payload: TCompanyEdit;
+}
+
 interface ICompaniesErrorAction {
   type: companiesActionTypes.COMPANY_ERROR;
   payload: string;
@@ -49,4 +66,5 @@ interface ICompaniesErrorAction {
 export type TCompaniesAction =
   | ICompaniesInitAction
   | ICompaniesSuccessAction
+  | ICompaniesEditAction
   | ICompaniesErrorAction;

@@ -1,7 +1,11 @@
 import React from "react";
+import DeleteFirm from "../DeleteFirm/DeleteFirm";
+import Modal from "../Modal";
 import "./toolbar.scss";
 
 const Toolbar = () => {
+  const [modal, setModal] = React.useState(false);
+
   return (
     <header className="toolbar">
       <a href="/" className="toolbar__backward">
@@ -57,7 +61,10 @@ const Toolbar = () => {
             />
           </svg>{" "}
         </span>
-        <span className="toolbar__btn red-btn">
+        <Modal active={modal} setActive={setModal}>
+          <DeleteFirm setActive={setModal} />
+        </Modal>
+        <span className="toolbar__btn red-btn" onClick={() => setModal(true)}>
           <svg
             width="16"
             height="17"

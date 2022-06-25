@@ -1,12 +1,19 @@
 import React from "react";
 import { TFirmTitleProps } from "./types";
+import Modal from "../Modal";
+import EditFirmTitle from "../EditFirmTitle";
 
 const FirmTitle: React.FC<TFirmTitleProps> = ({ title }) => {
+  const [modal, setModal] = React.useState(false);
+
   return (
     <div className="row">
+      <Modal active={modal} setActive={setModal}>
+        <EditFirmTitle setActive={setModal} />
+      </Modal>
       <span className="title">{title}</span>
       &nbsp;&nbsp;&nbsp;
-      <span className="btn green-btn">
+      <span className="btn green-btn" onClick={() => setModal(true)}>
         <svg
           width="18"
           height="17"
