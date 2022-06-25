@@ -36,3 +36,14 @@
     cursor: pointer;
   }
 }
+
+.input__file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.input__file-icon-wrapper {
+  display: flex;
+  align-items: center;
+}

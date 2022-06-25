@@ -1,7 +1,7 @@
 import React from "react";
 import FirmContact from "../FirmContact";
 import FirmInfo from "../FirmInfo";
-import FirmPhoto from "../FirmPhoto";
+import FirmPhotos from "../FirmPhotos";
 import FirmTitle from "../FirmTitle";
 import { TFirmProps } from "./types";
 
@@ -22,7 +22,7 @@ const Firm: React.FC<TFirmProps> = ({ company, contact }) => {
         phone={contact?.phone}
         email={contact?.email}
       />
-      <FirmPhoto photos={company?.photos} updatedAt={company?.updatedAt} />
+      <FirmPhotos photos={company?.photos} updatedAt={company?.updatedAt} />
     </>
   );
 };

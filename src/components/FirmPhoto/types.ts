@@ -1,10 +1,8 @@
 export type TFirmPhotoProps = {
-  photos:
-    | {
-        name: string;
-        filepath: string;
-        thumbpath: string;
-      }[]
-    | undefined;
-  updatedAt: string | undefined;
+  photo: {
+    name: string;
+    filepath: string;
+    thumbpath: string;
+  };
+  date: string;
 };

@@ -1,6 +1,7 @@
 import { Dispatch } from "react";
 import { TCompaniesAction, companiesActionTypes, TCompanyEdit } from "./types";
 import { token } from "../../assets/api";
+import axios from "axios";
 
 export const getCompanyById =
   (id: string) => async (dispatch: Dispatch<TCompaniesAction>) => {
@@ -74,6 +75,30 @@ export const deleteCompanyById =
       dispatch({
         type: companiesActionTypes.COMPANY_ERROR,
         payload: "Ошибка при удалении организации!",
+      });
+    }
+  };
+
+export const addPhoto =
+  (data: FormData) => async (dispatch: Dispatch<TCompaniesAction>) => {
+    try {
+      await axios
+        .post("http://135.181.35.61:2112/companies/12/image", data, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          dispatch({
+            type: companiesActionTypes.COMPANY_ADD_PICTURE,
+            payload: response.data,
+          });
+        });
+    } catch (e) {
+      dispatch({
+        type: companiesActionTypes.COMPANY_ERROR,
+        payload: "Ошибка при добавлении изображения!",
       });
     }
   };

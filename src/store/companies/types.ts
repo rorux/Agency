@@ -1,3 +1,9 @@
+export type TCompanyPhoto = {
+  name: string;
+  filepath: string;
+  thumbpath: string;
+};
+
 export type TCompany = {
   id: string;
   contactId: string;
@@ -10,11 +16,7 @@ export type TCompany = {
   };
   type: Array<string>;
   status: string;
-  photos: Array<{
-    name: string;
-    filepath: string;
-    thumbpath: string;
-  }>;
+  photos: Array<TCompanyPhoto>;
   createdAt: string;
   updatedAt: string;
 };
@@ -41,7 +43,7 @@ export enum companiesActionTypes {
   COMPANY_EDIT = "COMPANY::EDIT",
   COMPANY_ERROR = "COMPANY::ERROR",
   COMPANY_SUCCESS = "COMPANY::SUCCESS",
-  COMPANY_DELETE = "COMPANY::DELETE",
+  COMPANY_ADD_PICTURE = "COMPANY::ADD_PICTURE",
 }
 
 interface ICompaniesInitAction {
@@ -63,8 +65,14 @@ interface ICompaniesErrorAction {
   payload: string;
 }
 
+interface ICompaniesAddPictureAction {
+  type: companiesActionTypes.COMPANY_ADD_PICTURE;
+  payload: TCompanyPhoto;
+}
+
 export type TCompaniesAction =
   | ICompaniesInitAction
   | ICompaniesSuccessAction
   | ICompaniesEditAction
-  | ICompaniesErrorAction;
+  | ICompaniesErrorAction
+  | ICompaniesAddPictureAction;

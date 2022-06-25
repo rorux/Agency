@@ -120,6 +120,7 @@ const EditContact: React.FC<TEditContactProps> = ({ setActive }) => {
           placeholder=" "
           value={email}
           onChange={(event) => handleInputChange(event, setEmail)}
+          pattern="[0-9]{11}"
         />
         <label htmlFor="email" className="form__label">
           Отчество

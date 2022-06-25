@@ -20,6 +20,10 @@
     display: flex;
     cursor: pointer;
 
+    &_active {
+      background: #a4c7a5;
+    }
+
     &:hover {
       background: #a4c7a5;
     }
