@@ -69,7 +69,7 @@ export const deleteCompanyById =
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-      }).then((response) => console.log(response));
+      }).then((response) => console.log("response.status:", response.status));
     } catch (e) {
       dispatch({
         type: companiesActionTypes.COMPANY_ERROR,

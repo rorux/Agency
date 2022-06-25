@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { TFirmContactProps } from "./types";
 import { formatPhone } from "./constants";
+import EditContact from "../EditContact";
+import Modal from "../Modal";
 
 const FirmContact: React.FC<TFirmContactProps> = ({
   lastname,
@@ -10,6 +12,7 @@ const FirmContact: React.FC<TFirmContactProps> = ({
   email,
 }) => {
   const [convertedPhone, setConvertedPhone] = React.useState("");
+  const [modal, setModal] = React.useState(false);
 
   useEffect(() => {
     if (phone) {
@@ -20,10 +23,13 @@ const FirmContact: React.FC<TFirmContactProps> = ({
 
   return (
     <section className="info">
+      <Modal active={modal} setActive={setModal}>
+        <EditContact setActive={setModal} />
+      </Modal>
       <div className="row row-subtitle">
         <span className="subtitle">Контактные данные</span>
         &nbsp;&nbsp;&nbsp;
-        <span className="btn green-btn">
+        <span className="btn green-btn" onClick={() => setModal(true)}>
           <svg
             width="18"
             height="17"

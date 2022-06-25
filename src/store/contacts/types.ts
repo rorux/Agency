@@ -9,6 +9,14 @@ export type TContact = {
   updatedAt: string;
 };
 
+export type TContactEdit = {
+  lastname?: string;
+  firstname?: string;
+  patronymic?: string;
+  phone?: string;
+  email?: string;
+};
+
 export interface IContactsState {
   contact: TContact | null;
   loading: boolean;
