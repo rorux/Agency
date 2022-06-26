@@ -1,6 +1,5 @@
 import { Dispatch } from "react";
 import { TCompaniesAction, companiesActionTypes, TCompanyEdit } from "./types";
-import { token } from "../../assets/api";
 import axios from "axios";
 
 export const getCompanyById =
@@ -14,7 +13,7 @@ export const getCompanyById =
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
         },
       })
         .then((response) => response.json())
@@ -41,7 +40,7 @@ export const editCompanyById =
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
         },
         body: JSON.stringify(body),
       })
@@ -68,7 +67,7 @@ export const deleteCompanyById =
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
         },
       }).then((response) => console.log("response.status:", response.status));
     } catch (e) {
@@ -86,7 +85,7 @@ export const addPhoto =
         .post(`${process.env.REACT_APP_API}/companies/12/image`, data, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
           },
         })
         .then((response) => {
@@ -111,7 +110,7 @@ export const deletePhoto =
       await fetch(uri, {
         method: "DELETE",
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
         },
       }).then((response) => {
         console.log("response.status:", response.status);

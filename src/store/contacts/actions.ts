@@ -1,6 +1,5 @@
 import { Dispatch } from "react";
 import { TContactsAction, contactsActionTypes, TContactEdit } from "./types";
-import { token } from "../../assets/api";
 
 export const getContactById =
   (id: string) => async (dispatch: Dispatch<TContactsAction>) => {
@@ -13,7 +12,7 @@ export const getContactById =
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
         },
       })
         .then((response) => response.json())
@@ -40,7 +39,7 @@ export const editContactById =
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
         },
         body: JSON.stringify(body),
       })
