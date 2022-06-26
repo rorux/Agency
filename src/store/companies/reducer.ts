@@ -41,6 +41,18 @@ export const companyReducer = (
           photos: [...state.company.photos, action.payload],
         },
       };
+    case companiesActionTypes.COMPANY_DEL_PICTURE:
+      const newPhotos = state.company?.photos.filter(
+        (photo) => photo.name !== action.payload
+      );
+      return {
+        ...state,
+        company: {
+          ...state.company,
+          // @ts-ignore
+          photos: newPhotos,
+        },
+      };
     default: {
       return state;
     }

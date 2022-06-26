@@ -1,7 +1,11 @@
 import React from "react";
+import DeletePhoto from "../DeletePhoto";
+import Modal from "../Modal";
 import { TFirmPhotoProps } from "./types";
 
 const FirmPhoto: React.FC<TFirmPhotoProps> = ({ photo, date }) => {
+  const [modal, setModal] = React.useState(false);
+
   return (
     <div className="photo" key={photo.name}>
       <img
@@ -9,11 +13,14 @@ const FirmPhoto: React.FC<TFirmPhotoProps> = ({ photo, date }) => {
         src={photo.thumbpath}
         width="160"
         height="160"
-        alt="Первое фото"
+        alt="Изображение"
       />
       <span className="photo__name">{photo.name}</span>
       <span className="photo__date">{date}</span>
-      <span className="photo__delete">
+      <Modal active={modal} setActive={setModal}>
+        <DeletePhoto setActive={setModal} img={photo.name} />
+      </Modal>
+      <span className="photo__delete" onClick={() => setModal(true)}>
         <svg
           width="20"
           height="20"

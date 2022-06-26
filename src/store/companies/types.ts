@@ -40,10 +40,10 @@ export interface ICompaniesState {
 
 export enum companiesActionTypes {
   COMPANY_INIT = "COMPANY::INIT",
-  COMPANY_EDIT = "COMPANY::EDIT",
   COMPANY_ERROR = "COMPANY::ERROR",
   COMPANY_SUCCESS = "COMPANY::SUCCESS",
   COMPANY_ADD_PICTURE = "COMPANY::ADD_PICTURE",
+  COMPANY_DEL_PICTURE = "COMPANY::DEL_PICTURE",
 }
 
 interface ICompaniesInitAction {
@@ -53,11 +53,6 @@ interface ICompaniesInitAction {
 interface ICompaniesSuccessAction {
   type: companiesActionTypes.COMPANY_SUCCESS;
   payload: TCompany;
-}
-
-interface ICompaniesEditAction {
-  type: companiesActionTypes.COMPANY_EDIT;
-  payload: TCompanyEdit;
 }
 
 interface ICompaniesErrorAction {
@@ -70,9 +65,14 @@ interface ICompaniesAddPictureAction {
   payload: TCompanyPhoto;
 }
 
+interface ICompaniesDelPictureAction {
+  type: companiesActionTypes.COMPANY_DEL_PICTURE;
+  payload: string | undefined;
+}
+
 export type TCompaniesAction =
   | ICompaniesInitAction
   | ICompaniesSuccessAction
-  | ICompaniesEditAction
   | ICompaniesErrorAction
-  | ICompaniesAddPictureAction;
+  | ICompaniesAddPictureAction
+  | ICompaniesDelPictureAction;

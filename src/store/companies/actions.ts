@@ -102,3 +102,28 @@ export const addPhoto =
       });
     }
   };
+
+export const deletePhoto =
+  (id: string | undefined, img: string | undefined) =>
+  async (dispatch: Dispatch<TCompaniesAction>) => {
+    try {
+      const uri = `http://135.181.35.61:2112/companies/${id}/image/${img}`;
+      await fetch(uri, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((response) => {
+        console.log("response.status:", response.status);
+        dispatch({
+          type: companiesActionTypes.COMPANY_DEL_PICTURE,
+          payload: img,
+        });
+      });
+    } catch (e) {
+      dispatch({
+        type: companiesActionTypes.COMPANY_ERROR,
+        payload: "Ошибка при удалении организации!",
+      });
+    }
+  };

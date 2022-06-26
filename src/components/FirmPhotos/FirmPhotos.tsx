@@ -21,9 +21,17 @@ const FirmPhotos: React.FC<TFirmPhotosProps> = ({ photos, updatedAt }) => {
         <span className="subtitle">Приложенные фото</span>
       </div>
       <div className="row row-paragraph">
-        {photos?.map((photo) => (
-          <FirmPhoto photo={photo} date={convertedUpdatedAt} key={photo.name} />
-        ))}
+        {photos !== undefined && !photos.length ? (
+          <span className="info__param">Нет изображений</span>
+        ) : (
+          photos?.map((photo) => (
+            <FirmPhoto
+              photo={photo}
+              date={convertedUpdatedAt}
+              key={photo.name}
+            />
+          ))
+        )}
       </div>
       <div className="row row-paragraph">
         <AddPhotoButton />
