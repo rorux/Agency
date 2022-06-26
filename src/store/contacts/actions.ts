@@ -7,7 +7,7 @@ export const getContactById =
     try {
       dispatch({ type: contactsActionTypes.CONTACT_INIT });
 
-      const uri = `http://135.181.35.61:2112/contacts/${id}`;
+      const uri = `${process.env.REACT_APP_API}/contacts/${id}`;
 
       await fetch(uri, {
         method: "GET",
@@ -35,7 +35,7 @@ export const editContactById =
   (id: string | undefined, body: TContactEdit) =>
   async (dispatch: Dispatch<TContactsAction>) => {
     try {
-      const uri = `http://135.181.35.61:2112/contacts/${id}`;
+      const uri = `${process.env.REACT_APP_API}/contacts/${id}`;
       await fetch(uri, {
         method: "PATCH",
         headers: {

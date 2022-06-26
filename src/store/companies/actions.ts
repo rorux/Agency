@@ -8,7 +8,7 @@ export const getCompanyById =
     try {
       dispatch({ type: companiesActionTypes.COMPANY_INIT });
 
-      const uri = `http://135.181.35.61:2112/companies/${id}`;
+      const uri = `${process.env.REACT_APP_API}/companies/${id}`;
 
       await fetch(uri, {
         method: "GET",
@@ -36,7 +36,7 @@ export const editCompanyById =
   (id: string | undefined, body: TCompanyEdit) =>
   async (dispatch: Dispatch<TCompaniesAction>) => {
     try {
-      const uri = `http://135.181.35.61:2112/companies/${id}`;
+      const uri = `${process.env.REACT_APP_API}/companies/${id}`;
       await fetch(uri, {
         method: "PATCH",
         headers: {
@@ -63,7 +63,7 @@ export const editCompanyById =
 export const deleteCompanyById =
   (id: string | undefined) => async (dispatch: Dispatch<TCompaniesAction>) => {
     try {
-      const uri = `http://135.181.35.61:2112/companies/${id}`;
+      const uri = `${process.env.REACT_APP_API}/companies/${id}`;
       await fetch(uri, {
         method: "DELETE",
         headers: {
@@ -83,7 +83,7 @@ export const addPhoto =
   (data: FormData) => async (dispatch: Dispatch<TCompaniesAction>) => {
     try {
       await axios
-        .post("http://135.181.35.61:2112/companies/12/image", data, {
+        .post(`${process.env.REACT_APP_API}/companies/12/image`, data, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -107,7 +107,7 @@ export const deletePhoto =
   (id: string | undefined, img: string | undefined) =>
   async (dispatch: Dispatch<TCompaniesAction>) => {
     try {
-      const uri = `http://135.181.35.61:2112/companies/${id}/image/${img}`;
+      const uri = `${process.env.REACT_APP_API}/companies/${id}/image/${img}`;
       await fetch(uri, {
         method: "DELETE",
         headers: {
